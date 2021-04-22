@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">collegeProject</string>
+
+    <!-- Used in MainActivity -->
+    <string name="Hint_Roll_number">Roll Number</string>
+    <string name="Hint_Password">Password</string>
+    <string name="Login_Button">Log In</string>
+</resources>
