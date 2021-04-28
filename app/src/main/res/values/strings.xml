@@ -1,8 +1,17 @@
 <resources>
     <string name="app_name">collegeProject</string>
 
+    <!--Used in Google Services -->
+
     <!-- Used in MainActivity -->
-    <string name="Hint_Roll_number">Roll Number</string>
-    <string name="Hint_Password">Password</string>
-    <string name="Login_Button">Log In</string>
+    <string name="Login_Button">LogIn</string>
+    <string name="instruction_Text">Please LogIn using your college official Gmail ID.</string>
+    <string name="proceesDiloag_Title">Please Wait</string>
+    <string name="proceesDiloag_descr">You are logging in the App wait Please wait for while guys.</string>
+
+    <!--Used in SplashScreen-->
+    <string name="SplashMessage">Hey this is splash Screen</string>
+
+
+
 </resources>

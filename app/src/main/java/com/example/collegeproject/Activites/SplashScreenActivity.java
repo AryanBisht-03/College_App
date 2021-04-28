@@ -33,6 +33,7 @@ public class SplashScreenActivity extends AppCompatActivity {
                 }
                 finally {
                     startActivity(new Intent(SplashScreenActivity.this,MainActivity.class));
+                    finish();
                 }
             }
         });
