@@ -32,7 +32,9 @@ public class MainActivity extends AppCompatActivity {
     private GoogleSignInClient mGoogleSignInClient;
 
     private static final int RC_SIGN_IN = 9001;
+
     private ProgressDialog dialog;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -80,6 +82,7 @@ public class MainActivity extends AppCompatActivity {
 
             if (requestCode == RC_SIGN_IN) {
             Task<GoogleSignInAccount> task = GoogleSignIn.getSignedInAccountFromIntent(data);
+
             try {
                 // Google Sign In was successful, authenticate with Firebase
                 GoogleSignInAccount account = task.getResult(ApiException.class);
@@ -150,7 +153,6 @@ public class MainActivity extends AppCompatActivity {
         super.onStart();
         if(mAuth.getCurrentUser() != null)
         {
-
             startActivity(new Intent(MainActivity.this,bottom_ShowDetailActivity.class));
             finishAffinity();
         }
