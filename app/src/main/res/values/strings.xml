@@ -2,6 +2,14 @@
     <string name="app_name">collegeProject</string>
 
     <!--Used in Google Services -->
+    <string name="key_student">Students</string>
+    <string name="key_gender">gender</string>
+    <string name="key_batch">batch</string>
+    <string name="key_rollNum">rollNum</string>
+    <string name="key_name">name</string>
+    <string name="key_image">image</string>
+    <string name="key_library">library</string>
+    <string name="key_sport">sport</string>
 
     <!-- Used in MainActivity -->
     <string name="Login_Button">LogIn</string>
@@ -11,8 +19,16 @@
 
     <!--Used in SplashScreen-->
     <string name="SplashMessage">Hey this is splash Screen</string>
-    <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
+
+    <!--Used in Profile Fragment-->
+    <string name="title_Profile">IIIT Manipur Student</string>
+    <string name="gender_Profile">Gender</string>
+    <string name="roll_Num_Profile">Roll No.</string>
+    <string name="batch_Profile">Semester</string>
+    <string name="logOutButton_Profile">Log Out</string>
+
+    <!-- Used in fill Detial Fragemnt -->
+    <string name="DOB">Date of Birth</string>
 
 
 </resources>

@@ -43,7 +43,6 @@ public class bottom_ShowDetailActivity extends AppCompatActivity {
         binding.bottomNavigationView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
             @Override
             public boolean onNavigationItemSelected(@NonNull MenuItem item) {
-                Log.d("Aryan","Something2 is changes ");
                 switch (item.getItemId()) {
                     case R.id.libraryItem:
                         binding.viewPager.setCurrentItem(0);
@@ -67,7 +66,6 @@ public class bottom_ShowDetailActivity extends AppCompatActivity {
 
             @Override
             public void onPageSelected(int position) {
-                Log.d("Aryan","Something1 is changes "+position);
                 switch (position) {
                     case 0:
 
@@ -133,6 +131,10 @@ public class bottom_ShowDetailActivity extends AppCompatActivity {
         else if(item.getItemId() == R.id.profile)
         {
             Log.d("Aryan","Profile is clicked");
+            Intent intent = new Intent(this,EmptyFragmentActivity.class);
+            intent.putExtra("name","profile");
+            startActivity(intent);
+
             return true;
         }
         return super.onOptionsItemSelected(item);

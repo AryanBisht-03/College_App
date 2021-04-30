@@ -24,13 +24,21 @@ import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.auth.GoogleAuthProvider;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
+
+import java.util.Map;
 
 public class MainActivity extends AppCompatActivity {
 
     ActivityMainBinding binding;
     private FirebaseAuth mAuth;
     private GoogleSignInClient mGoogleSignInClient;
-
+    private FirebaseDatabase database;
+    private DatabaseReference reference;
     private static final int RC_SIGN_IN = 9001;
 
     private ProgressDialog dialog;
@@ -43,6 +51,8 @@ public class MainActivity extends AppCompatActivity {
         getSupportActionBar().hide();
 
         mAuth = FirebaseAuth.getInstance();
+        database = FirebaseDatabase.getInstance();
+        reference = database.getReference().child(getString(R.string.key_student));
 
         dialog = new ProgressDialog(this);
         dialog.setTitle(getString(R.string.proceesDiloag_Title));
@@ -53,6 +63,12 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Log.d("Aryan","Button is clicked ");
+
+                if(binding.rollTextMain.getText().toString().isEmpty())
+                {
+                    binding.rollTextMain.setError("Please Enter your roll Number :-(");
+                    return ;
+                }
                 GoogleSignInOptions gso = new GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
                         .requestIdToken(getString(R.string.default_web_client_id))
                         .requestEmail()
@@ -113,6 +129,9 @@ public class MainActivity extends AppCompatActivity {
 
         }
     }
+
+
+
     private void firebaseAuthWithGoogle(String idToken) {
         AuthCredential credential = GoogleAuthProvider.getCredential(idToken, null);
 
@@ -130,7 +149,9 @@ public class MainActivity extends AppCompatActivity {
                             String email = user.getEmail();
                             if(email.contains("@iiitmanipur"))
                             {
-                                startActivity(new Intent(MainActivity.this,bottom_ShowDetailActivity.class));
+                                Intent intent = new Intent(MainActivity.this,EmptyFragmentActivity.class);
+                                intent.putExtra("rollNum",binding.rollTextMain.getText().toString());
+                                startActivity(intent);
                                 finishAffinity();
                             }
                             else
@@ -147,6 +168,7 @@ public class MainActivity extends AppCompatActivity {
                     }
                 });
     }
+
 
     @Override
     protected void onStart() {
