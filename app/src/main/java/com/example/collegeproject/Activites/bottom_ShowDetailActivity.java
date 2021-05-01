@@ -19,6 +19,11 @@ import com.example.collegeproject.Fragments.profileFragment;
 import com.example.collegeproject.Fragments.sportFragment;
 import com.example.collegeproject.R;
 import com.example.collegeproject.databinding.ActivityBottomShowDetailBinding;
+import com.google.android.gms.auth.api.signin.GoogleSignIn;
+import com.google.android.gms.auth.api.signin.GoogleSignInClient;
+import com.google.android.gms.auth.api.signin.GoogleSignInOptions;
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.Task;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.firebase.auth.FirebaseAuth;
 import com.squareup.picasso.Picasso;
@@ -122,15 +127,28 @@ public class bottom_ShowDetailActivity extends AppCompatActivity {
 
         if(item.getItemId() == R.id.logOut)
         {
-            Log.d("Aryan","Log Out Clciked");
-            mAuth.signOut();
-            startActivity(new Intent(bottom_ShowDetailActivity.this,MainActivity.class));
-            finishAffinity();
+
+            GoogleSignInOptions gso = new GoogleSignInOptions.
+                    Builder(GoogleSignInOptions.DEFAULT_SIGN_IN).
+                    build();
+
+            GoogleSignInClient googleSignInClient= GoogleSignIn.getClient(bottom_ShowDetailActivity.this,gso);
+            googleSignInClient.signOut().addOnCompleteListener(new OnCompleteListener<Void>() {
+                @Override
+                public void onComplete(@NonNull Task<Void> task) {
+                    if (task.isSuccessful()){
+                        FirebaseAuth.getInstance().signOut(); // very important if you are using firebase.
+                        startActivity(new Intent(bottom_ShowDetailActivity.this, MainActivity.class));
+                        finishAffinity();
+                    }
+                }
+            });
+
             return true;
         }
         else if(item.getItemId() == R.id.profile)
         {
-            Log.d("Aryan","Profile is clicked");
+
             Intent intent = new Intent(this,EmptyFragmentActivity.class);
             intent.putExtra("name","profile");
             startActivity(intent);

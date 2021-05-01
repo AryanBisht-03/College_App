@@ -50,7 +50,7 @@ public class libraryFragment extends Fragment {
         reference.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
-
+                items.clear();
                 for(DataSnapshot data: snapshot.getChildren())
                 {
                     itemModel value = data.getValue(itemModel.class);
@@ -76,11 +76,13 @@ public class libraryFragment extends Fragment {
         if(items.size()==0)
         {
             binding.textView4.setVisibility(View.VISIBLE);
+            binding.animationView.setVisibility(View.VISIBLE);
             binding.recyclerView.setVisibility(View.GONE);
         }
         else
         {
             binding.textView4.setVisibility(View.GONE);
+            binding.animationView.setVisibility(View.GONE);
             binding.recyclerView.setVisibility(View.VISIBLE);
         }
     }

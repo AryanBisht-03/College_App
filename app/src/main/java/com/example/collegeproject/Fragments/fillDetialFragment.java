@@ -75,7 +75,7 @@ public class fillDetialFragment extends Fragment {
                 RadioButton selectedButton = (RadioButton) binding.getRoot().findViewById(checkedId);
                 checkRadio = true;
                 genderText = selectedButton.getText().toString();
-                Log.d("Aryan",selectedButton.getText().toString());
+
             }
         });
 

@@ -1,6 +1,7 @@
 package com.example.collegeproject.Activites;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.app.AppCompatDelegate;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -19,6 +20,10 @@ public class SplashScreenActivity extends AppCompatActivity {
         setContentView(binding.getRoot());
 
         getSupportActionBar().hide();
+        AppCompatDelegate
+                .setDefaultNightMode(
+                        AppCompatDelegate
+                                .MODE_NIGHT_NO);
 
         Thread delay = new Thread(new Runnable() {
             @Override

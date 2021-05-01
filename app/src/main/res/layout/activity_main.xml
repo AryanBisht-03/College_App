@@ -6,17 +6,30 @@
     android:layout_height="match_parent"
     tools:context=".Activites.MainActivity">
 
+    <com.airbnb.lottie.LottieAnimationView
+        android:id="@+id/animationView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/loginButton"
+        app:lottie_autoPlay="true"
+        app:lottie_loop="true"
+        app:lottie_rawRes="@raw/college_student_jumping" />
+
     <TextView
         android:id="@+id/instruction"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="25dp"
-        android:layout_marginTop="150dp"
+        android:layout_marginTop="75dp"
         android:layout_marginEnd="25dp"
         android:gravity="center"
         android:lineSpacingExtra="8sp"
         android:padding="5dp"
         android:text="@string/instruction_Text"
+        android:textColor="#232323"
         android:textSize="24sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -46,7 +59,8 @@
             android:id="@+id/rollTextMain"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="@string/roll_Num_Profile" />
+            android:hint="@string/roll_Num_Profile"
+            android:inputType="number" />
     </com.google.android.material.textfield.TextInputLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

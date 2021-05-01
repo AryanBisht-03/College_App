@@ -17,6 +17,11 @@ import com.example.collegeproject.Activites.MainActivity;
 import com.example.collegeproject.Adapters.studentDetail;
 import com.example.collegeproject.R;
 import com.example.collegeproject.databinding.FragmentProfileBinding;
+import com.google.android.gms.auth.api.signin.GoogleSignIn;
+import com.google.android.gms.auth.api.signin.GoogleSignInClient;
+import com.google.android.gms.auth.api.signin.GoogleSignInOptions;
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
@@ -76,7 +81,6 @@ public class profileFragment extends Fragment {
         binding.addImage.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Log.d("Aryan","Upload new Image");
 
                 Map<String,Object> map = new HashMap<>();
 
@@ -93,9 +97,21 @@ public class profileFragment extends Fragment {
         binding.logOutButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                mAuth.signOut();
-                startActivity(new Intent(getActivity(), MainActivity.class));
-                getActivity().finishAffinity();
+                GoogleSignInOptions gso = new GoogleSignInOptions.
+                        Builder(GoogleSignInOptions.DEFAULT_SIGN_IN).
+                        build();
+
+                GoogleSignInClient googleSignInClient= GoogleSignIn.getClient(getActivity(),gso);
+                googleSignInClient.signOut().addOnCompleteListener(new OnCompleteListener<Void>() {
+                    @Override
+                    public void onComplete(@NonNull Task<Void> task) {
+                        if (task.isSuccessful()){
+                            FirebaseAuth.getInstance().signOut(); // very important if you are using firebase.
+                            startActivity(new Intent(getActivity(), MainActivity.class));
+                            getActivity().finishAffinity();
+                        }
+                    }
+                });
             }
         });
         return binding.getRoot();

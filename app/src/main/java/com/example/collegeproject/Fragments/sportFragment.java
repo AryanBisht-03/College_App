@@ -52,7 +52,7 @@ public class sportFragment extends Fragment {
         reference.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
-
+                items.clear();
                 for(DataSnapshot data: snapshot.getChildren())
                 {
                     itemModel value = data.getValue(itemModel.class);
@@ -78,12 +78,14 @@ public class sportFragment extends Fragment {
     private void checkSizeOfItems() {
         if(items.size()==0)
         {
+            binding.animationView.setVisibility(View.VISIBLE);
             binding.textView3.setVisibility(View.VISIBLE);
             binding.recyclerView2.setVisibility(View.GONE);
         }
         else
         {
             binding.textView3.setVisibility(View.GONE);
+            binding.animationView.setVisibility(View.GONE);
             binding.recyclerView2.setVisibility(View.VISIBLE);
         }
     }

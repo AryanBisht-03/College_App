@@ -60,7 +60,7 @@
                 android:id="@+id/viewIssue"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="75dp"
+                android:layout_marginStart="50dp"
                 android:text="@string/title_issue"
                 app:layout_constraintBottom_toBottomOf="@+id/viewQuantity"
                 app:layout_constraintStart_toEndOf="@+id/viewQuantity"

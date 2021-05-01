@@ -2,6 +2,7 @@ package com.example.collegeproject.Activites;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.app.AppCompatDelegate;
 
 import android.app.ProgressDialog;
 import android.content.Intent;
@@ -62,7 +63,6 @@ public class MainActivity extends AppCompatActivity {
         binding.loginButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Log.d("Aryan","Button is clicked ");
 
                 if(binding.rollTextMain.getText().toString().isEmpty())
                 {
@@ -82,7 +82,7 @@ public class MainActivity extends AppCompatActivity {
         });
     }
     private void signIn() {
-        Log.d("Aryan","Let's start sigin");
+
 
         Intent signInIntent = mGoogleSignInClient.getSignInIntent();
         startActivityForResult(signInIntent, RC_SIGN_IN);
@@ -97,12 +97,11 @@ public class MainActivity extends AppCompatActivity {
         // Result returned from launching the Intent from GoogleSignInApi.getSignInIntent(...);
 
             if (requestCode == RC_SIGN_IN) {
-            Task<GoogleSignInAccount> task = GoogleSignIn.getSignedInAccountFromIntent(data);
+                Task<GoogleSignInAccount> task = GoogleSignIn.getSignedInAccountFromIntent(data);
 
             try {
                 // Google Sign In was successful, authenticate with Firebase
                 GoogleSignInAccount account = task.getResult(ApiException.class);
-                Log.d("Aryan", "firebaseAuthWithGoogle:" + account.getId());
 
                 String email = account.getEmail();
                 if(email.contains("@iiitmanipur"))
@@ -111,6 +110,7 @@ public class MainActivity extends AppCompatActivity {
                 }
                 else
                 {
+                    mGoogleSignInClient.signOut();
                     Toast.makeText(this, "Please Use college Official Gmail ID", Toast.LENGTH_SHORT).show();
                     throw new Exception("Wrong Id");
                 }
@@ -123,7 +123,7 @@ public class MainActivity extends AppCompatActivity {
             }
             catch (Exception e)
             {
-                Log.d("Aryan","Wrong Email Id");
+
                 dialog.dismiss();
             }
 
@@ -141,24 +141,12 @@ public class MainActivity extends AppCompatActivity {
                     public void onComplete(@NonNull Task<AuthResult> task) {
                         if (task.isSuccessful()) {
                             // Sign in success, update UI with the signed-in user's information
-                            Log.d("Aryan", "signInWithCredential:success");
                             dialog.dismiss();
 
-                            FirebaseUser user = mAuth.getCurrentUser();
-
-                            String email = user.getEmail();
-                            if(email.contains("@iiitmanipur"))
-                            {
-                                Intent intent = new Intent(MainActivity.this,EmptyFragmentActivity.class);
-                                intent.putExtra("rollNum",binding.rollTextMain.getText().toString());
-                                startActivity(intent);
-                                finishAffinity();
-                            }
-                            else
-                            {
-                                mAuth.signOut();
-                                Toast.makeText(MainActivity.this, "email is wrong "+email, Toast.LENGTH_SHORT).show();
-                            }
+                            Intent intent = new Intent(MainActivity.this,EmptyFragmentActivity.class);
+                            intent.putExtra("rollNum",binding.rollTextMain.getText().toString());
+                            startActivity(intent);
+                            finishAffinity();
 
                         } else {
                             // If sign in fails, display a message to the user.
@@ -178,6 +166,6 @@ public class MainActivity extends AppCompatActivity {
             startActivity(new Intent(MainActivity.this,bottom_ShowDetailActivity.class));
             finishAffinity();
         }
-        Log.d("Aryan","No user is here");
+
     }
 }
