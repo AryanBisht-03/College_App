@@ -1,5 +1,6 @@
 package com.example.collegeproject.Fragments;
 
+import android.content.Intent;
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
@@ -12,6 +13,7 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.Toast;
 
+import com.example.collegeproject.Activites.MainActivity;
 import com.example.collegeproject.Adapters.studentDetail;
 import com.example.collegeproject.R;
 import com.example.collegeproject.databinding.FragmentProfileBinding;
@@ -77,13 +79,13 @@ public class profileFragment extends Fragment {
                 Log.d("Aryan","Upload new Image");
 
                 Map<String,Object> map = new HashMap<>();
-                map.put("bookName","Book Name 2");
-                map.put("quantity",1);
+
+                map.put("name","Football 2");
+                map.put("quantity","2");
                 map.put("issueDate","05/12/2021");
                 map.put("returnDate","06/01/2021");
 
-                reference.child(getString(R.string.key_library)).push().updateChildren(map);
-
+                reference.child(getString(R.string.key_sport)).push().updateChildren(map);
                 //Set new Image in the photo section.
             }
         });
@@ -91,9 +93,9 @@ public class profileFragment extends Fragment {
         binding.logOutButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Log.d("Aryan","LogOut ho gya smhj ja");
-                Toast.makeText(getActivity(), "LogOut ho gya smhj ja", Toast.LENGTH_SHORT).show();
-
+                mAuth.signOut();
+                startActivity(new Intent(getActivity(), MainActivity.class));
+                getActivity().finishAffinity();
             }
         });
         return binding.getRoot();

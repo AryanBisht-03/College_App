@@ -31,4 +31,15 @@
     <string name="DOB">Date of Birth</string>
 
 
+    <!-- Used in Recycler Layout-->
+    <string name="title_quantity">Quantity</string>
+    <string name="title_issue">Issue Date</string>
+    <string name="title_return">Return Date</string>
+
+    <!--Used in Sports and library Fragment-->
+    <string name="nothing_title_sport">You have not issue any sport product. Please issue some product and play as well because sport is also
+        a important part of our life. So play some sport and enjoy life :-)</string>
+    <string name="nothing_title_library">You have not issue any books. Please issues and study because you are here to study and make your parents and teachers
+        proud, so study now.. :-)</string>
+
 </resources>
