@@ -69,20 +69,24 @@ public class MainActivity extends AppCompatActivity {
                     binding.rollTextMain.setError("Please Enter your roll Number :-(");
                     return ;
                 }
-                GoogleSignInOptions gso = new GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
-                        .requestIdToken(getString(R.string.default_web_client_id))
-                        .requestEmail()
-                        .build();
 
-                mGoogleSignInClient = GoogleSignIn.getClient(MainActivity.this, gso);
 
-                signIn();
+
+                    GoogleSignInOptions gso = new GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
+                            .requestIdToken(getString(R.string.default_web_client_id))
+                            .requestEmail()
+                            .build();
+
+                    mGoogleSignInClient = GoogleSignIn.getClient(MainActivity.this, gso);
+
+                    signIn();
+
                 //Gmail SignIn
             }
         });
     }
     private void signIn() {
-        Log.d("Aryan","Let's start sigin");
+        Log.d("Aryan","Let's start signin");
 
         Intent signInIntent = mGoogleSignInClient.getSignInIntent();
         startActivityForResult(signInIntent, RC_SIGN_IN);
@@ -108,11 +112,14 @@ public class MainActivity extends AppCompatActivity {
                 if(email.contains("@iiitmanipur"))
                 {
                     firebaseAuthWithGoogle(account.getIdToken());
+
                 }
                 else
                 {
                     Toast.makeText(this, "Please Use college Official Gmail ID", Toast.LENGTH_SHORT).show();
+                    dialog.dismiss();
                     throw new Exception("Wrong Id");
+
                 }
 
 
