@@ -6,6 +6,7 @@ import androidx.appcompat.app.AppCompatDelegate;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.View;
 
 import com.example.collegeproject.R;
 import com.example.collegeproject.databinding.ActivitySplashScreenBinding;
@@ -38,6 +39,7 @@ public class SplashScreenActivity extends AppCompatActivity {
                 }
                 finally {
                     startActivity(new Intent(SplashScreenActivity.this,MainActivity.class));
+
                     finish();
                 }
             }

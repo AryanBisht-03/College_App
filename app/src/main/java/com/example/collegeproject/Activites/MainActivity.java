@@ -38,8 +38,6 @@ public class MainActivity extends AppCompatActivity {
     ActivityMainBinding binding;
     private FirebaseAuth mAuth;
     private GoogleSignInClient mGoogleSignInClient;
-    private FirebaseDatabase database;
-    private DatabaseReference reference;
     private static final int RC_SIGN_IN = 9001;
 
     private ProgressDialog dialog;
@@ -52,8 +50,6 @@ public class MainActivity extends AppCompatActivity {
         getSupportActionBar().hide();
 
         mAuth = FirebaseAuth.getInstance();
-        database = FirebaseDatabase.getInstance();
-        reference = database.getReference().child(getString(R.string.key_student));
 
         dialog = new ProgressDialog(this);
         dialog.setTitle(getString(R.string.proceesDiloag_Title));
@@ -114,7 +110,6 @@ public class MainActivity extends AppCompatActivity {
                     Toast.makeText(this, "Please Use college Official Gmail ID", Toast.LENGTH_SHORT).show();
                     throw new Exception("Wrong Id");
                 }
-
 
             } catch (ApiException e) {
                 // Google Sign In failed, update UI appropriately

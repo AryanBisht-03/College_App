@@ -4,15 +4,18 @@
     <item
         android:id="@+id/libraryItem"
         android:title="Library"
+        android:iconTint="#66A6FF"
         android:icon="@drawable/ic_open_book"/>
 
     <item
         android:id="@+id/Sports"
         android:title="Sports"
+        android:iconTint="#66A6FF"
         android:icon="@drawable/ic_football"/>
     <item
         android:id="@+id/profile_bottom"
         android:icon="@drawable/ic_keyman"
+        android:iconTint="#66A6FF"
         android:title="Profile"/>
 
 </menu>

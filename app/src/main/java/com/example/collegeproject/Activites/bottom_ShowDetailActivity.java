@@ -2,6 +2,7 @@ package com.example.collegeproject.Activites;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.app.AppCompatDelegate;
 import androidx.fragment.app.FragmentStatePagerAdapter;
 import androidx.viewpager.widget.ViewPager;
 
@@ -26,7 +27,12 @@ import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
 import com.squareup.picasso.Picasso;
+
+import java.util.HashMap;
+import java.util.Map;
 
 public class bottom_ShowDetailActivity extends AppCompatActivity {
 
@@ -42,8 +48,22 @@ public class bottom_ShowDetailActivity extends AppCompatActivity {
 
         mAuth = FirebaseAuth.getInstance();
 
+        AppCompatDelegate
+                .setDefaultNightMode(
+                        AppCompatDelegate
+                                .MODE_NIGHT_NO);
         BottomFragmentsAdapter navigationAdapter = new BottomFragmentsAdapter(getSupportFragmentManager());
         binding.viewPager.setAdapter(navigationAdapter);
+
+        DatabaseReference db = FirebaseDatabase.getInstance().getReference().child("Shabbir").child(FirebaseAuth.getInstance().getUid());
+
+        Map<String,Object> map = new HashMap<>();
+        map.put("name","Aryan");
+        map.put("rollNum","19010119");
+        map.put("classes","bhai pta nai kya dalna hai tu dal da");
+        map.put("present","ya par bi pta nai kya dalna hai");
+
+        db.child("Bhai Subject Name lihk ya Par").push().updateChildren(map);
 
         binding.bottomNavigationView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
             @Override

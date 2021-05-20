@@ -4,6 +4,7 @@
 
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.VIBRATE" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
 
 
     <application
@@ -13,10 +14,12 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.CollegeProject">
-        <activity android:name=".Activites.EmptyFragmentActivity">
+        <activity android:name=".Activites.EmptyFragmentActivity"
+            android:windowSoftInputMode="adjustResize">
 
         </activity>
-        <activity android:name=".Activites.bottom_ShowDetailActivity" />
+        <activity android:name=".Activites.bottom_ShowDetailActivity"
+            android:windowSoftInputMode="adjustResize"/>
         <activity android:name=".Activites.SplashScreenActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

@@ -10,15 +10,17 @@
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        android:background="@drawable/bg_profile_fragment">
+
         <de.hdodenhof.circleimageview.CircleImageView
             android:id="@+id/profileImage"
             android:layout_width="125dp"
             android:layout_height="125dp"
-            android:layout_marginTop="25dp"
+            android:layout_marginTop="10dp"
             android:scaleType="centerCrop"
             android:src="@drawable/man"
-            app:civ_border_color="#FF000000"
+            app:civ_border_color="#fff"
             app:civ_border_width="2dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -30,7 +32,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="15dp"
             android:text="TextView"
-            android:textColor="#232323"
+            android:textColor="#fff"
             android:textSize="24sp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -43,7 +45,7 @@
             android:layout_marginStart="25dp"
             android:layout_marginTop="25dp"
             android:text="@string/gender_Profile"
-            android:textColor="#393939"
+            android:textColor="#1F72E6"
             android:textSize="22sp"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/nameTextDetial" />
@@ -53,7 +55,8 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="15dp"
-            android:background="#E3E3E3"
+            android:background="@drawable/recyler_bg"
+            android:gravity="center"
             android:orientation="horizontal"
             android:paddingStart="15dp"
             android:paddingEnd="15dp"
@@ -89,6 +92,7 @@
                 android:id="@+id/rollNumText"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:background="@drawable/recyler_bg"
                 android:hint="@string/roll_Num_Profile"
                 android:inputType="number" />
         </com.google.android.material.textfield.TextInputLayout>
@@ -108,6 +112,7 @@
                 android:id="@+id/batchText"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:background="@drawable/recyler_bg"
                 android:hint="@string/batch_Profile"
                 android:inputType="number" />
         </com.google.android.material.textfield.TextInputLayout>
@@ -120,7 +125,7 @@
             android:layout_marginStart="24dp"
             android:layout_marginTop="40dp"
             android:text="@string/DOB"
-            android:textColor="#393939"
+            android:textColor="#1F72E6"
             android:textSize="22sp"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/textInputLayout3" />
@@ -132,7 +137,7 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="25dp"
             android:layout_marginEnd="50dp"
-            android:background="#DADADA"
+            android:background="@drawable/recyler_bg"
             android:gravity="center"
             android:text="JAN 01 2020"
             android:textColor="@color/black"
@@ -147,11 +152,12 @@
             android:id="@+id/nextButton"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="30dp"
+            android:layout_marginTop="25dp"
+            android:background="@drawable/bg_button_logout"
             android:text="Next"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/textView2" />
+            app:layout_constraintTop_toBottomOf="@+id/datePickerButton" />
 
         <TextView
             android:id="@+id/textView5"
@@ -159,6 +165,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="5dp"
             android:text="(*Optional)"
+            android:textColor="#1F72E6"
             app:layout_constraintStart_toStartOf="@+id/textView2"
             app:layout_constraintTop_toBottomOf="@+id/textView2" />
 

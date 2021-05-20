@@ -1,9 +1,11 @@
 package com.example.collegeproject.Fragments;
 
 import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
 import android.util.Log;
@@ -21,6 +23,7 @@ import com.google.android.gms.auth.api.signin.GoogleSignIn;
 import com.google.android.gms.auth.api.signin.GoogleSignInClient;
 import com.google.android.gms.auth.api.signin.GoogleSignInOptions;
 import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DataSnapshot;
@@ -78,22 +81,6 @@ public class profileFragment extends Fragment {
         });
 
 
-        binding.addImage.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-
-                Map<String,Object> map = new HashMap<>();
-
-                map.put("name","Football 2");
-                map.put("quantity","2");
-                map.put("issueDate","05/12/2021");
-                map.put("returnDate","06/01/2021");
-
-                reference.child(getString(R.string.key_sport)).push().updateChildren(map);
-                //Set new Image in the photo section.
-            }
-        });
-
         binding.logOutButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -115,5 +102,15 @@ public class profileFragment extends Fragment {
             }
         });
         return binding.getRoot();
+    }
+
+    @Override
+    public void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+        if(data.getData()!=null)
+        {
+            Uri sFile = data.getData();
+            binding.profileImage.setImageURI(sFile);
+        }
     }
 }
