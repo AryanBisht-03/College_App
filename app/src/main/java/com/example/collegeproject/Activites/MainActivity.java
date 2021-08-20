@@ -76,6 +76,7 @@ public class MainActivity extends AppCompatActivity {
                 //Gmail SignIn
             }
         });
+        throw new RuntimeException("Test Crash");
     }
     private void signIn() {
 
