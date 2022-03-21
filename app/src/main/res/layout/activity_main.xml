@@ -74,7 +74,8 @@
                     android:layout_height="wrap_content"
                     android:background="@drawable/recyler_bg"
                     android:hint="@string/roll_Num_Profile"
-                    android:inputType="number" />
+                    android:inputType="number"
+                    android:textSize="14sp" />
             </com.google.android.material.textfield.TextInputLayout>
 
             <com.google.android.gms.common.SignInButton
