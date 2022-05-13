@@ -56,6 +56,15 @@
                     android:paddingEnd="25dp"
                     android:paddingBottom="5dp">
 
+                    <ImageView
+                        android:id="@+id/changeImage"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/ic_baseline_add"
+                        app:layout_constraintBottom_toBottomOf="@+id/profileImage"
+                        app:layout_constraintEnd_toEndOf="@+id/profileImage" />
+
+
                     <de.hdodenhof.circleimageview.CircleImageView
                         android:id="@+id/profileImage"
                         android:layout_width="150dp"
