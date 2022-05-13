@@ -31,7 +31,7 @@
                 android:fontFamily="sans-serif-medium"
                 android:text="@string/title_Profile"
                 android:textColor="#F1EEEE"
-                android:textSize="32sp"
+                android:textSize="24sp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
@@ -79,7 +79,7 @@
                         android:layout_marginTop="10dp"
                         android:text="your Email"
                         android:textColor="#1F72E6"
-                        android:textSize="20sp"
+                        android:textSize="16sp"
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintTop_toBottomOf="@+id/nameText" />
@@ -91,7 +91,7 @@
                         android:layout_marginTop="5dp"
                         android:text="Your Name"
                         android:textColor="#1F72E6"
-                        android:textSize="20sp"
+                        android:textSize="16sp"
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintTop_toBottomOf="@id/profileImage" />
@@ -142,7 +142,7 @@
                         android:layout_marginTop="5dp"
                         android:text="Roll_num"
                         android:textColor="#1E1E1E"
-                        android:textSize="20sp"
+                        android:textSize="18sp"
                         app:layout_constraintStart_toStartOf="@+id/viewRoll"
                         app:layout_constraintTop_toBottomOf="@+id/viewRoll" />
 
@@ -165,7 +165,7 @@
                         android:layout_marginTop="5dp"
                         android:text="Batch"
                         android:textColor="#1E1E1E"
-                        android:textSize="20sp"
+                        android:textSize="18sp"
                         app:layout_constraintStart_toStartOf="@+id/viewBatch"
                         app:layout_constraintTop_toBottomOf="@+id/viewBatch" />
 
@@ -188,7 +188,7 @@
                         android:layout_marginTop="5dp"
                         android:text="Gender"
                         android:textColor="#1E1E1E"
-                        android:textSize="20sp"
+                        android:textSize="18sp"
                         app:layout_constraintStart_toStartOf="@+id/viewGender"
                         app:layout_constraintTop_toBottomOf="@+id/viewGender" />
 

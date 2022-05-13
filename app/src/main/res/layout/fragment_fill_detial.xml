@@ -46,7 +46,7 @@
             android:layout_marginTop="25dp"
             android:text="@string/gender_Profile"
             android:textColor="#1F72E6"
-            android:textSize="22sp"
+            android:textSize="18sp"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/nameTextDetial" />
 
@@ -126,7 +126,7 @@
             android:layout_marginTop="40dp"
             android:text="@string/DOB"
             android:textColor="#1F72E6"
-            android:textSize="22sp"
+            android:textSize="18sp"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/textInputLayout3" />
 
@@ -141,7 +141,7 @@
             android:gravity="center"
             android:text="JAN 01 2020"
             android:textColor="@color/black"
-            android:textSize="20sp"
+            android:textSize="18sp"
             app:layout_constraintBottom_toBottomOf="@+id/textView2"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="1.0"
