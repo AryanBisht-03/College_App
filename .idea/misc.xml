@@ -3,7 +3,19 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Projects/Android/CollogeProject3Sem/collegeProject/app/src/main/res/drawable/bg_bottom_navigation.xml" value="0.2125" />
+        <entry key="..\:/Projects/Android/CollogeProject3Sem/collegeProject/app/src/main/res/drawable/bg_button_logout.xml" value="0.2125" />
+        <entry key="..\:/Projects/Android/CollogeProject3Sem/collegeProject/app/src/main/res/drawable/bg_main_activity.xml" value="0.2125" />
+        <entry key="..\:/Projects/Android/CollogeProject3Sem/collegeProject/app/src/main/res/drawable/bg_selecticon.xml" value="0.2125" />
         <entry key="..\:/Projects/Android/CollogeProject3Sem/collegeProject/app/src/main/res/layout/activity_bottom__show_detail.xml" value="0.21621621621621623" />
+        <entry key="..\:/Projects/Android/CollogeProject3Sem/collegeProject/app/src/main/res/layout/activity_empty_fragment.xml" value="0.21621621621621623" />
+        <entry key="..\:/Projects/Android/CollogeProject3Sem/collegeProject/app/src/main/res/layout/activity_main.xml" value="0.21621621621621623" />
+        <entry key="..\:/Projects/Android/CollogeProject3Sem/collegeProject/app/src/main/res/layout/activity_splash_screen.xml" value="0.21621621621621623" />
+        <entry key="..\:/Projects/Android/CollogeProject3Sem/collegeProject/app/src/main/res/layout/fragment_fill_detial.xml" value="0.21621621621621623" />
+        <entry key="..\:/Projects/Android/CollogeProject3Sem/collegeProject/app/src/main/res/layout/fragment_library.xml" value="0.21621621621621623" />
+        <entry key="..\:/Projects/Android/CollogeProject3Sem/collegeProject/app/src/main/res/layout/fragment_profile.xml" value="0.21621621621621623" />
+        <entry key="..\:/Projects/Android/CollogeProject3Sem/collegeProject/app/src/main/res/layout/fragment_sport.xml" value="0.21621621621621623" />
+        <entry key="..\:/Projects/Android/CollogeProject3Sem/collegeProject/app/src/main/res/layout/library_recycler_layout.xml" value="0.21621621621621623" />
       </map>
     </option>
   </component>

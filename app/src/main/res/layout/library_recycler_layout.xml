@@ -41,6 +41,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="15dp"
                 android:text="@string/title_quantity"
+                android:textSize="13sp"
                 android:visibility="visible"
                 app:layout_constraintStart_toStartOf="@+id/bookName"
                 app:layout_constraintTop_toBottomOf="@+id/bookName" />
@@ -50,6 +51,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/title_return"
+                android:textSize="13sp"
                 app:layout_constraintBottom_toBottomOf="@+id/viewIssue"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toEndOf="@+id/viewIssue"
@@ -64,7 +66,8 @@
                 android:text="@string/title_issue"
                 app:layout_constraintBottom_toBottomOf="@+id/viewQuantity"
                 app:layout_constraintStart_toEndOf="@+id/viewQuantity"
-                app:layout_constraintTop_toTopOf="@+id/viewQuantity" />
+                app:layout_constraintTop_toTopOf="@+id/viewQuantity"
+                android:textSize="13sp" />
 
             <TextView
                 android:id="@+id/returnText"
@@ -74,7 +77,7 @@
                 android:layout_marginBottom="10dp"
                 android:text="TextView"
                 android:textColor="#303030"
-                android:textSize="20sp"
+                android:textSize="16sp"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintStart_toStartOf="@+id/viewReturn"
                 app:layout_constraintTop_toBottomOf="@+id/viewReturn" />
@@ -87,7 +90,7 @@
                 android:layout_marginBottom="10dp"
                 android:text="1"
                 android:textColor="#303030"
-                android:textSize="20sp"
+                android:textSize="16sp"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintStart_toStartOf="@+id/viewQuantity"
                 app:layout_constraintTop_toBottomOf="@+id/viewQuantity" />
@@ -99,7 +102,7 @@
                 android:layout_marginTop="5dp"
                 android:text="TextView"
                 android:textColor="#303030"
-                android:textSize="20sp"
+                android:textSize="16sp"
                 app:layout_constraintStart_toStartOf="@+id/viewIssue"
                 app:layout_constraintTop_toBottomOf="@+id/viewIssue" />
         </androidx.constraintlayout.widget.ConstraintLayout>

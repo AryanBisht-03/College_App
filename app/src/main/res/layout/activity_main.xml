@@ -50,7 +50,7 @@
                 android:padding="5dp"
                 android:text="@string/instruction_Text"
                 android:textColor="#232323"
-                android:textSize="20sp"
+                android:textSize="16sp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
@@ -74,7 +74,8 @@
                     android:layout_height="wrap_content"
                     android:background="@drawable/recyler_bg"
                     android:hint="@string/roll_Num_Profile"
-                    android:inputType="number" />
+                    android:inputType="number"
+                    android:textSize="14sp" />
             </com.google.android.material.textfield.TextInputLayout>
 
             <com.google.android.gms.common.SignInButton
